@@ -30,7 +30,7 @@ In `config/initializers/service_now.rb`
   end
 ```
 
-## Dynamic client_id and client_secret (Cf. https://github.com/omniauth/omniauth/wiki/Setup-Phase)
+## Dynamic client_id and client_secret
 
 In `config/initializers/service_now.rb`
 
@@ -45,6 +45,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :service_now, nil, nil, { setup: setup_proc, scope: 'useraccount' }
 end
 ```
+
+More info: https://github.com/omniauth/omniauth/wiki/Setup-Phase
 
 ## Semver
 
