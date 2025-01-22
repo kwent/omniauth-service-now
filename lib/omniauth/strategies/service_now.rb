@@ -43,7 +43,8 @@ module OmniAuth
             env['omniauth.params']['client_secret'],
             site: env['omniauth.params']['site'],
             authorize_url: options.client_options.authorize_url,
-            token_url: options.client_options.token_url
+            token_url: options.client_options.token_url,
+            connection_opts: { proxy: env['omniauth.strategy'].options.client_options.proxy },
           )
           client.auth_code.get_token(verifier, {:redirect_uri => callback_url}.merge(token_params.to_hash(:symbolize_keys => true)), deep_symbolize(options.auth_token_params))
         else
